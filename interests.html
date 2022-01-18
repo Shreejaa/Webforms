@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>interests</title>
+<style>h2 {text-align:center;}</style></head>
+<body>
+
+<h2>Student Interests Page</h2><br><br>
+
+
+<script src="interests.js"></script>
+
+<form class="form-inline" name="formData" id="formData" action="javascript:;" method="POST" onsubmit="insertData(this)">
+<div class="form-group">
+	<label for="sid">Student ID:</label>
+	<input class="form-control mx-sm-3" type="text" id="sid" name="sid" size="4" maxlength="4" pattern="^[0-9]\d+$" title="Only numeric values" aria-describedby="sid_hint" required>
+	<small id="sid_hint" class="text-muted">
+		Must be 0-4 long.
+	</small>
+</div><br><br>
+<div class="form-group">
+	<label for="sname">Student Name:</label>
+	<input class="form-control mx-sm-3" type="text" id="sname" name="sname" size="20" maxlength="50"  pattern="^[a-zA-Z]+$" title="Only alpabets" aria-describedby="sname_hint" required>
+	<small id="sname_hint" class="text-muted">
+		Must be 0-50 long.
+	</small>
+</div><br><br>
+
+
+<label class="input-group-text">Check programming languages you are interested in.</label>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="pls" id="pls" value="java">
+<label class="form-check-label" for="pls">Java</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="pls" id="pls" value="cplusplus">
+<label class="form-check-label" for="pls">C++</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="pls" id="pls" value="pascal">
+<label class="form-check-label" for="pls">Pascal</label>
+</div>
+<br>
+<div class="input-group mb-3">
+	<label class="input-group-text" for="degree">What is your degree?</label>
+	<select class="form-control" name="degree" id="degree">
+		<option value="ms">M.S.</option>
+
+		<option value="phd">Ph.D.</option>
+
+</select>
+</div><br><br>
+<div class="input-group mb-3">
+	<label class="input-group-text" for="hobbies">What are your hobbies (choose as many as relevant)?</label>
+	<select class="form-control" name="hobbies" id="hobbies" multiple size="6">
+		<option value="stamp_collection">Stamp Collection</option>
+
+		<option value="coin_collection">Coin Collection</option>
+
+		<option value="reading">Reading</option>
+
+		<option value="crossword_puzzles">Crossword Puzzles</option>
+
+		<option value="painting">Painting</option>
+
+		<option value="screen_printing">Screen Printing</option>
+
+</select>
+</div>
+
+<br><br>
+<button class="btn btn-success" type="submit" name="submit">Submit Data</button>
+</form>
+<div id="result"></div>

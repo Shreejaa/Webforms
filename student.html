@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>student</title>
+<style>h2 {text-align:center;}</style></head>
+<body>
+
+<h2>Class Registration Page</h2><br><br>
+
+
+<script src="student.js"></script>
+
+<form class="form-inline" name="formData" id="formData" action="javascript:;" method="POST" onsubmit="insertData(this)">
+<div class="form-group">
+	<label for="sno">Student Number:</label>
+	<input class="form-control mx-sm-3" type="text" id="sno" name="sno" size="9" maxlength="9" pattern="^[0-9]\d+$" title="Only numeric values" aria-describedby="sno_hint" required>
+	<small id="sno_hint" class="text-muted">
+		Must be 0-9 long.
+	</small>
+</div><br><br>
+<div class="form-group">
+	<label for="firstname">First Name:</label>
+	<input class="form-control mx-sm-3" type="text" id="firstname" name="firstname" size="20" maxlength="50"  pattern="^[a-zA-Z]+$" title="Only alpabets" aria-describedby="firstname_hint" required>
+	<small id="firstname_hint" class="text-muted">
+		Must be 0-50 long.
+	</small>
+</div><br><br>
+<div class="form-group">
+	<label for="lastname">Last Name:</label>
+	<input class="form-control mx-sm-3" type="text" id="lastname" name="lastname" size="20" maxlength="50"  pattern="^[a-zA-Z]+$" title="Only alpabets" aria-describedby="lastname_hint" required>
+	<small id="lastname_hint" class="text-muted">
+		Must be 0-50 long.
+	</small>
+</div><br><br>
+
+
+<label class="input-group-text">Check classes you are enrolled in:</label>
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" name="courses" id="courses" value="2310" checked>
+<label class="form-check-label" for="courses">CSc 2310</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="courses" id="courses" value="4710">
+<label class="form-check-label" for="courses">CSc 4710</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="courses" id="courses" value="8710">
+<label class="form-check-label" for="courses">CSc 8710</label>
+</div>
+<br>
+<div class="input-group mb-3">
+	<label class="input-group-text" for="status">What is your residence status?</label>
+	<select class="form-control" name="status" id="status">
+		<option value="on">On-Campus</option>
+
+		<option value="off">Off-Campus</option>
+
+</select>
+</div><br><br>
+<label class="input-group-text" for="semester">Choose a semester:</label><br>
+<input class="form-control" type="radio" name="semester" id="semester" value="spring">
+<label for="spring">Spring</label>
+<input class="form-control" type="radio" name="semester" id="semester" value="summer">
+<label for="summer">Summer</label>
+<input class="form-control" type="radio" name="semester" id="semester" value="fall">
+<label for="fall">Fall</label>
+
+<br><br>
+<button class="btn btn-success" type="submit" name="submit">Send to database</button>
+
+<button class="btn btn-info" type="reset" name="reset">Clear all fields</button>
+</form>
+<div id="result"></div>
